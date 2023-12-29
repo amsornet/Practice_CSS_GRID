@@ -1,3 +1,7 @@
+html, body{
+    height: 100%;
+    margin: 0;
+}
 .grid * {
     padding: 10px 15px;
     background-color: rgb(96, 143, 204);
@@ -12,16 +16,28 @@
 /*сетка*/
 
 .grid {
+    height: 100%;
     display: grid;
-    /*grid-template-columns: 150px 150px 150px 150px;*/
-    /*grid-auto-rows: 100px 100px 100px;*/
     grid-gap: 20px;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas:
+        "header header"
+        "aside main"
+        "aside footer";
+}
+header {
+    grid-area: header;
+}
 
-    /* start, end, center, stretch */
-    /*justify-items: start;*/
-    /*align-items: stretch;*/
+aside {
+    grid-area: aside;
+}
 
-    /*grid-template: rows / columns;*/
-    grid-template: repeat(3, 100px) / repeat(4, 150px);
+main {
+    grid-area: main;
+}
 
+footer {
+    grid-area: footer;
 }
